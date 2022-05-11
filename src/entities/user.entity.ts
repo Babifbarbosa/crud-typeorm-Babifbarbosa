@@ -12,6 +12,18 @@ export class User {
   @Column({ nullable: true })
   email: string;
 
+  @Column()
+  password: string;
+
+  @Column()
+  age: number;
+
+  @Column({ default: "now()" })
+  created_at: Date;
+
+  @Column({ default: "now()" })
+  updated_at: Date;
+
   constructor() {
     if (!this.id) {
       this.id = uuid();
